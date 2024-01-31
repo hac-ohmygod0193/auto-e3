@@ -2,8 +2,9 @@ from llama_index.prompts import PromptTemplate
 from llama_index.llms import Gemini
 import google.generativeai as genai
 import os
-os.environ["GOOGLE_API_KEY"] = "AIzaSyCL3t2JuQkt3TtslgudLae9Lv4v18ODWjM"
-GOOGLE_API_KEY = "AIzaSyCL3t2JuQkt3TtslgudLae9Lv4v18ODWjM"
+GOOGLE_API_KEY = "<YOUR_GOOGLE_MAKERSUITE_API>"
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
+
 genai.configure()
 
 llm = Gemini(model='models/gemini-pro')
