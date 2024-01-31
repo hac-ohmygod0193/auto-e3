@@ -2,7 +2,7 @@ from notion_client import Client
 
 # Initialize the client
 # 取得token的方法，可以參考官方文件這邊 https://developers.notion.com/docs/getting-started
-NOTION_TOKEN = 'secret_P2jf8ep3BkZZFENd3evtum6Gqz2wM33kgiOSgQzzihW'
+NOTION_TOKEN = 'YOUR_NOTION_TOKEN' # secret-xxxxxxxxx 
 notion = Client(auth=NOTION_TOKEN)
 
 
@@ -20,7 +20,7 @@ def insert_to_notion(
 
     notion.pages.create(
         **{
-            "parent": {"database_id": 'c307503cb29748318fdfbe342d544772'},
+            "parent": {"database_id": '<your_database_id>'},
             "properties": {
                 # 標題的屬性跟標題是什麼
                 "Subject": {"title": [{"type": "text", "text": {"content": subject}}]},
@@ -47,11 +47,6 @@ def insert_to_notion(
 
 
 if __name__ == '__main__':
-    my_page = notion.databases.query(
-        database_id="c307503cb29748318fdfbe342d544772")
-    print(my_page)
-
-    '''
     # Replace the following variables with your actual data
     subject = "Your Subject"
     course_id = "Your Course ID"
@@ -60,4 +55,3 @@ if __name__ == '__main__':
     content = "Your Content hello"
     contents = content.split()
     insert_to_notion(contents, subject, course_id, sender, date)
-    '''
