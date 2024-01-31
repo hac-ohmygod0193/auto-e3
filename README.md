@@ -1,2 +1,3 @@
-# E3-email-summarizer
-Due to the messy of E3 email, I use LLM(gemini-pro) and notion api to summarizer those emails.
+[simplegmail](https://github.com/jeremyephron/simplegmail/tree/master)
+
+[Get_course_info requests method](https://hackmd.io/@AndyChiang/DynamicCrawler#AJAX%E6%B3%95)
