@@ -2,3 +2,4 @@ google-generativeai
 notion-client
 requests
 simplegmail
+llama_index
