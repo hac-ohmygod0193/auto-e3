@@ -8,7 +8,7 @@ gmail = Gmail()
 
 def receive_email():
     query_params = {
-        'newer_than': (10, 'day'),
+        'newer_than': (20, 'day'),
         'older_than': (0,  'hour'),
         # 'unread': True,
         'sender': ['e3@nycu.edu.tw'],
