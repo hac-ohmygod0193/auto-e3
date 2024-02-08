@@ -16,11 +16,16 @@ def receive_email():
         # 'labels':[['Work'], ['Homework', 'CS']]
     }
     messages = gmail.get_messages(query=construct_query(query_params))
+    labels = gmail.list_labels()
+    # To find a label by the name that you know (just an example):
+    notion_label = list(filter(lambda x: x.name == 'To_Notion', labels))[0]
     print(len(messages))
     split_syb = '---------------------------------------------------------------------'
     filters = ['\"數位教學平台 E3\"', '\"E3數位教學平台\"', '\"E3 數位教學平台 公告\"']
     for message in messages:
-        message.mark_as_read()
+        # message.mark_as_read()
+        message.add_label(notion_label)
+        
         # filter e3 announcement
         SENDER = message.sender.split(" <")
         if SENDER[0] in filters:
