@@ -8,12 +8,12 @@ gmail = Gmail()
 
 def receive_email():
     query_params = {
-        'newer_than': (20, 'day'),
+        'newer_than': (8, 'hour'),
         'older_than': (0,  'hour'),
         # 'unread': True,
         'sender': ['e3@nycu.edu.tw'],
-        'exclude_sender': [['鄭恆安'], ['registra@nycu.edu.tw'], ['noreply@nycu.edu.tw']]
-        # 'labels':[['Work'], ['Homework', 'CS']]
+        'exclude_sender': [['鄭恆安'], ['registra@nycu.edu.tw'], ['noreply@nycu.edu.tw']],
+        'exclude_labels': [['To_Notion']]
     }
     messages = gmail.get_messages(query=construct_query(query_params))
     labels = gmail.list_labels()
