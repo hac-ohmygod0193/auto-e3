@@ -21,8 +21,9 @@ jobs:
         with:
           python-version: '3.11' # install the python version needed
       - name: create gmail_token.json
-        run:
+        run: |
           echo $BASE64_GMAIL_TOKEN | base64 --decode | jq > gmail_token.json
+          cat gmail_token.json
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
