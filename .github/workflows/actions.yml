@@ -1,7 +1,5 @@
 name: run main.py
 
-env: 
-  BASE64_GMAIL_TOKEN: ${{ secrets.BASE64_GMAIL_TOKEN }}
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -21,6 +19,8 @@ jobs:
         with:
           python-version: '3.11' # install the python version needed
       - name: create gmail_token.json
+        env: 
+          BASE64_GMAIL_TOKEN: ${{ secrets.BASE64_GMAIL_TOKEN }}
         run: |
           echo $BASE64_GMAIL_TOKEN | base64 --decode | jq > gmail_token.json
           cat gmail_token.json
@@ -31,18 +31,6 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: python main.py
-          
-      - name: commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
-          
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          DATABASE_ID: ${{ secrets.DATABASE_ID }}
