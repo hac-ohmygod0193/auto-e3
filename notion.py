@@ -2,9 +2,10 @@ from notion_client import Client
 
 # Initialize the client
 # 取得token的方法，可以參考官方文件這邊 https://developers.notion.com/docs/getting-started
-NOTION_TOKEN = 'secret_P2jf8ep3BkZZFENd3evtum6Gqz2wM33kgiOSgQzzihW' # secret-xxxxxxxxx 
+NOTION_TOKEN = os.environ["NOTION_TOKEN"]
 notion = Client(auth=NOTION_TOKEN)
 
+database_id = os.environ["DATABASE_ID"]
 
 def insert_to_notion(
     contents,
@@ -20,7 +21,7 @@ def insert_to_notion(
 
     notion.pages.create(
         **{
-            "parent": {"database_id": 'c307503cb29748318fdfbe342d544772'},
+            "parent": {"database_id": database_id},
             "properties": {
                 # 標題的屬性跟標題是什麼
                 "Subject": {"title": [{"type": "text", "text": {"content": subject}}]},
