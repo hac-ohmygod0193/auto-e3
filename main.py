@@ -1,4 +1,4 @@
-from gmail import receive_email
 import os
+from gmail import receive_email
 receive_email()
 
