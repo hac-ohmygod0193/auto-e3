@@ -1,13 +1,9 @@
 # E3 email summarizer
-## Star My Repo if you think it is useful, THX
+**Star My Repo if you think it is useful, THX**
 
-**Orignal E3 mail**
+## Demo Result
+<img width="776" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/b40f5576-24bb-45e1-8f94-b7c844012cbc">
 
-<img width="252" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/c820a901-104a-4759-905e-3110d3426682">
-
-**Summarize Result**
-
-<img width="289" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/44446795-9f8d-438c-8db0-af975520f112">
 
 ## 靈感來源
 因為E3 email的訊息太亂太雜，希望能透過LLM統整、摘要重要訊息，並儲存在notion database上方便查閱。
