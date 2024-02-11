@@ -1,4 +1,5 @@
 # E3 email summarizer
+## Star My Repo if you think it is useful, THX
 
 **Orignal E3 mail**
 
@@ -87,9 +88,8 @@ If you want to run it locally on your desktop or laptop.
 Just replace 
 1. `os.environ["NOTION_TOKEN"]` `os.environ["DATABASE_ID"]` in `notion.py`
 2. `os.environ["GOOGLE_API_KEY"]` in `gemini_agent.py`
-And Keep your `gmail_token.json` file under same directory with gmail.py
 
-## Star My Repo if you think this is useful
+And Keep your `gmail_token.json` file under same directory with gmail.py
 
 ## Reference
 [simplegmail](https://github.com/jeremyephron/simplegmail/tree/master)
