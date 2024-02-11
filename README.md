@@ -54,7 +54,8 @@ python3 setup_gmail_api.py
 > At the end of the URL, there will be an ID that you can grab here.
 > For example, in https://www.notion.so/ohmygod0193/test-4f3f55661c333e5585660c4c35e10533
 > `4f3f55661c333e5585660c4c35e10533` is the DATABASE_ID.
-5. New Repository secrets 'Name' called 'NOTION_TOKEN' and paste the notion api your create with **step 1** to 'Secret' below
+5. New Repository secrets 'Name' called 'NOTION_TOKEN'
+6. Paste the notion api your create with **step 1** to 'Secret' below
 
 ### Setup Gemini APi secret token
 1. Head over to makersuite.google.com/app/apikey [visit](https://makersuite.google.com/app/apikey) and sign in with your Google account.
