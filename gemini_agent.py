@@ -20,7 +20,7 @@ and extract important information as clear and short as possible.
 Only use headers(#) and bullet points(-) in your summary with markdown format.
 Only Use Traditional Chinese.
 """
-prompt_tmpl = PromptTemplate(prompt_)
+prompt_tmpl = PromptTemplate(prompt)
 
 
 def summarize_email(email: str):
