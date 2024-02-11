@@ -20,7 +20,7 @@ Clone all files to your
 git clone https://github.com/hac-ohmygod0193/auto-e3.git
 ```
 ```
-git clone https://github.com/hac-ohmygod0193/auto-e3.git
+pip install -r requirements.txt
 ```
 Here you need to paste your own secret key to enable the power of auto-e3
 <img width="945" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/51a2f931-9d80-4991-96be-f413c2c790a7">
