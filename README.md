@@ -1,4 +1,6 @@
 # E3 email summarizer
+<img width="252" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/c820a901-104a-4759-905e-3110d3426682">
+<img width="289" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/44446795-9f8d-438c-8db0-af975520f112">
 
 ## 靈感來源
 因為E3 email的訊息太亂太雜，希望能透過LLM統整、摘要重要訊息，並儲存在notion database上方便查閱。
@@ -26,11 +28,13 @@ Here you need to paste your own secret key to enable the power of auto-e3
 ```python=
 python3 setup_gmail_api.py
 ```
+
 3. You will see the messeage like below in your terminal or just see a pop out webpage. Click and authorize with the account you apply for your gmail api.
 <img width="722" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/d9792146-cfba-4789-8535-617aa64481b8">
 
 4. Copy the string in your gmail_token.json after step 4 and paste [here](https://www.base64encode.org/) to get encoded string.
 <img width="689" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/2518345a-876f-4ea0-84d6-70230dfbf82b">
+
 5. New Repository secrets 'Name' called 'BASE64_GMAIL_TOKEN' and paste the encoded base64 string to 'Secret' below
 <img width="596" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/4595a3fc-695b-4fda-bf20-01090a6be3e9">
 
@@ -69,7 +73,9 @@ Just replace
 2. 'os.environ["GOOGLE_API_KEY"]' in 'gemini_agent.py'
 And Keep your 'gmail_token.json' file under same directory with gmail.py
 
-## reference
+## Star My Repo if you think this is useful
+
+## Reference
 [simplegmail](https://github.com/jeremyephron/simplegmail/tree/master)
 [Get_course_info requests method](https://hackmd.io/@AndyChiang/DynamicCrawler#AJAX%E6%B3%95)
 [How to access gemini model](https://beebom.com/how-use-google-gemini-api-key/)
