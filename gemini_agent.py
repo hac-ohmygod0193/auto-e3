@@ -1,10 +1,8 @@
 from llama_index.prompts import PromptTemplate
 from llama_index.llms import Gemini
 import google.generativeai as genai
-from dotenv import load_dotenv, dotenv_values
 import os
 
-load_dotenv()
 
 GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]
 
