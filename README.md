@@ -46,24 +46,32 @@ python3 setup_gmail_api.py
 
 ### Setup Notion secret token
 1. Follow the instructions from [here](https://github.com/ramnes/notion-sdk-py?tab=readme-ov-file#usage)
+
 2. **Make Sure you create a new page** in your notion as 'database' instead of 'page'
+
 3. **Make Sure you add connection to your notion api you just create**
 <img width="779" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/07fc706a-4c99-47cb-a38b-e3797eac7345">
+
 4. New Repository secrets 'Name' called 'DATABASE_ID' and paste your id of your notion database to 'Secret' below
 > You need `DATABASE_ID` here, which can be obtained from the web version of Notion by clicking on the page. 
 > At the end of the URL, there will be an ID that you can grab here.
 > For example, in https://www.notion.so/ohmygod0193/test-4f3f55661c333e5585660c4c35e10533
 > `4f3f55661c333e5585660c4c35e10533` is the DATABASE_ID.
+
 5. New Repository secrets 'Name' called 'NOTION_TOKEN'
+
 6. Paste the notion api your create with **step 1** to 'Secret' below
 
 ### Setup Gemini APi secret token
 1. Head over to makersuite.google.com/app/apikey [visit](https://makersuite.google.com/app/apikey) and sign in with your Google account.
+
 2. Under API keys, click the “Create API key in new project” button.
 ![image](https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/26c6a39c-3ef4-4e7f-a10f-09b25a8df063)
+
 3. generate google gemini api key
 4. Copy the API key and keep it private. Do not publish or share the API key publicly.
 ![image](https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/9f6ccf15-9fec-41e9-9e32-a1c1c8776679)
+
 5. New Repository secrets 'Name' called 'GOOGLE_API_KEY' and paste the API key to 'Secret' below
 
 ## Deploy scheduled bot with Github Actions
@@ -71,6 +79,7 @@ python3 setup_gmail_api.py
 2. In the '.github/workflows' directory, create a file named 'actions.yml'. For more information, see "Creating new files."
 3. Copy my actions.yml [here](https://github.com/hac-ohmygod0193/auto-e3/blob/main/.github/workflows/actions.yml)
 <img width="952" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/4b7685bc-bdbd-44ba-8c08-0acc230dbb6e">
+
 4. You can set up your desired running schedule by changing this line '- cron: '0 */3 * * *' # run every 3 hours'. For more crontab settings , see [here](https://crontab.guru/)
 
 ## Run it locally 
