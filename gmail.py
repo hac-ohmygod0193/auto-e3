@@ -8,12 +8,12 @@ gmail = Gmail()
 
 def receive_email():
     query_params = {
-        'newer_than': (25, 'day'),
-        'older_than': (0,  'hour'),
+        'newer_than': (6, 'hour'),
+        'older_than': (0, 'hour'),
         # 'unread': True,
         'sender': ['e3@nycu.edu.tw'],
         'exclude_sender': [['registra@nycu.edu.tw'], ['noreply@nycu.edu.tw']],
-        # 'exclude_labels': [['To_Notion']]
+        'exclude_labels': [['To_Notion']]
     }
     messages = gmail.get_messages(query=construct_query(query_params))
     labels = gmail.list_labels()
@@ -30,9 +30,6 @@ def receive_email():
         SENDER = message.sender.split(" <")
         if SENDER[0] in filters:
             continue
-        print('From: ' + SENDER[0])
-        print('Subject: ' + message.subject)
-        print('Date: ' + message.date)
         summary = ""
         course_id = ""
         try:
@@ -48,8 +45,11 @@ def receive_email():
             course_name = course_id
             teacher_name = 'NAN'
         contents = summary.split('\n')
-        print('Course: ' + course_id)
-        print('Summary: ' + summary)  # or message.html
-        print('------------------------------------')
+        #print('From: ' + SENDER[0])
+        #print('Subject: ' + message.subject)
+        #print('Date: ' + message.date)
+        #print('Course: ' + course_id)
+        #print('Summary: \n' + summary)  # or message.html
+        #print('------------------------------------')
         insert_to_notion(contents, message.subject, course_name, teacher_name,
                          SENDER[0][1:-2], message.date)
