@@ -1,5 +1,7 @@
 # E3 email summarizer
+- **Orignal E3 mail**
 <img width="252" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/c820a901-104a-4759-905e-3110d3426682">
+- **Summarize Result**
 <img width="289" alt="image" src="https://github.com/hac-ohmygod0193/auto-e3/assets/62164142/44446795-9f8d-438c-8db0-af975520f112">
 
 ## 靈感來源
