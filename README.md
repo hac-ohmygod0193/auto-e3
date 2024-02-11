@@ -96,3 +96,4 @@ And Keep your `gmail_token.json` file under same directory with gmail.py
 [Get_course_info requests method](https://hackmd.io/@AndyChiang/DynamicCrawler#AJAX%E6%B3%95)
 [How to access gemini model](https://beebom.com/how-use-google-gemini-api-key/)
 [notion-client-api](https://github.com/ramnes/notion-sdk-py?tab=readme-ov-file#usage)
+[GitHub Actions Secrets](https://www.wbolt.com/github-actions-secret.html)
