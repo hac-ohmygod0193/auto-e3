@@ -8,12 +8,12 @@ gmail = Gmail()
 
 def receive_email():
     query_params = {
-        'newer_than': (8, 'hour'),
+        'newer_than': (25, 'day'),
         'older_than': (0,  'hour'),
         # 'unread': True,
         'sender': ['e3@nycu.edu.tw'],
         'exclude_sender': [['registra@nycu.edu.tw'], ['noreply@nycu.edu.tw']],
-        'exclude_labels': [['To_Notion']]
+        # 'exclude_labels': [['To_Notion']]
     }
     messages = gmail.get_messages(query=construct_query(query_params))
     labels = gmail.list_labels()
@@ -25,7 +25,7 @@ def receive_email():
     for message in messages:
         # message.mark_as_read()
         message.add_label(notion_label)
-        
+
         # filter e3 announcement
         SENDER = message.sender.split(" <")
         if SENDER[0] in filters:
@@ -47,7 +47,7 @@ def receive_email():
         else:
             course_name = course_id
             teacher_name = 'NAN'
-        contents = summary[1:].split('\n-')
+        contents = summary.split('\n')
         print('Course: ' + course_id)
         print('Summary: ' + summary)  # or message.html
         print('------------------------------------')
