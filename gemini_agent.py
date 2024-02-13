@@ -2,8 +2,6 @@ from llama_index.llms import Gemini
 import google.generativeai as genai
 import os
 
-load_dotenv()
-
 GOOGLE_API_KEY = os.environ["GOOGLE_API_KEY"]
 
 genai.configure()
