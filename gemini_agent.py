@@ -1,4 +1,4 @@
-from llama_index.llms import Gemini
+from llama_index.core.llms import Gemini
 import google.generativeai as genai
 from dotenv import load_dotenv
 import os
