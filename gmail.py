@@ -52,4 +52,4 @@ def receive_email():
         #print('Summary: \n' + summary)  # or message.html
         #print('------------------------------------')
         insert_to_notion(contents, message.subject, course_name, teacher_name,
-                         SENDER[0][1:-2], message.date)
+                         SENDER[0][1:-1], message.date)
