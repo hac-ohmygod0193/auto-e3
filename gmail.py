@@ -51,5 +51,5 @@ def receive_email():
         #print('Course: ' + course_id)
         #print('Summary: \n' + summary)  # or message.html
         #print('------------------------------------')
-        insert_to_notion(contents, message.subject, course_name, teacher_name,
+        insert_to_notion(message.plain, contents, message.subject, course_name, teacher_name,
                          SENDER[0][1:-1], message.date)
