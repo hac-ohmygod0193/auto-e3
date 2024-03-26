@@ -67,8 +67,8 @@ def insert_to_notion(
         children=[
             {
                 "object": "block",
-                "type": 'toggle_list_item',
-                block_type: {
+                "type": 'toggle',
+                'toggle': {
                     "rich_text": [{"type": "text", "text": {"content": original_content}}]
                 }
             }
