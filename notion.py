@@ -1,6 +1,8 @@
 from notion_client import Client
+from dotenv import load_dotenv, dotenv_values
 import os
 
+load_dotenv()
 # Initialize the client
 # 取得token的方法，可以參考官方文件這邊 https://developers.notion.com/docs/getting-started
 NOTION_TOKEN = os.environ["NOTION_TOKEN"]
@@ -12,6 +14,7 @@ database_id = os.environ["DATABASE_ID"]
 def insert_to_notion(
     original_content: str,
     contents: list[str],
+    subject: str,
     course_name: str,
     teacher_name: str,
     sender: str,
@@ -69,7 +72,16 @@ def insert_to_notion(
                 "object": "block",
                 "type": 'toggle',
                 'toggle': {
-                    "rich_text": [{"type": "text", "text": {"content": original_content}}]
+                    "rich_text": [{"type": "text", "text": {"content": '信件原文'}}],
+                    "children": [
+                        {
+                            "object": "block",
+                            "type": "paragraph",
+                            "paragraph": {
+                                "rich_text": [{"type": "text", "text": {"content": original_content}}]
+                            }
+                        }
+                    ]
                 }
             }
         ]
@@ -82,10 +94,11 @@ if __name__ == '__main__':
     course_id = "Your Course ID"
     teacher_name = "nan"
     sender = "Your Sender"
-    date = "2024-02-11"
+    date = "2024-03-26"
     content = """   
     # Hello World
     - i am HAC
     """
     contents = content.split('\n')
-    insert_to_notion(contents, subject, course_id, teacher_name, sender, date)
+    insert_to_notion('original_content', contents, subject,
+                     course_id, teacher_name, sender, date)
