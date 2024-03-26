@@ -10,8 +10,8 @@ database_id = os.environ["DATABASE_ID"]
 
 
 def insert_to_notion(
-    contents,
-    subject: str,
+    original_content: str,
+    contents: list[str],
     course_name: str,
     teacher_name: str,
     sender: str,
@@ -62,6 +62,18 @@ def insert_to_notion(
                 }
             ]
         )
+    notion.blocks.children.append(
+        created_page["id"],
+        children=[
+            {
+                "object": "block",
+                "type": 'toggle_list_item',
+                block_type: {
+                    "rich_text": [{"type": "text", "text": {"content": original_content}}]
+                }
+            }
+        ]
+    )
 
 
 if __name__ == '__main__':
