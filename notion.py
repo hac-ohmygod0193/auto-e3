@@ -1,13 +1,9 @@
 from notion_client import Client
-from dotenv import load_dotenv, dotenv_values
 import os
-
-load_dotenv()
 # Initialize the client
 # 取得token的方法，可以參考官方文件這邊 https://developers.notion.com/docs/getting-started
 NOTION_TOKEN = os.environ["NOTION_TOKEN"]
 notion = Client(auth=NOTION_TOKEN)
-
 database_id = os.environ["DATABASE_ID"]
 
 
