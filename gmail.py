@@ -32,13 +32,16 @@ def receive_email():
             continue
         summary = ""
         course_id = ""
+        email_content = ""
         try:
             PLAIN = message.plain.split(split_syb)
             course_id = PLAIN[0].split()[0]
             summary = summarize_email(PLAIN[1])
+            email_content = PLAIN[1]
         except:
             course_id = "NAN"
             summary = summarize_email(message.plain)
+            email_content = message.plain
         if course_id[0] == '1':
             course_name, teacher_name = get_course_info(course_id)
         else:
@@ -51,5 +54,5 @@ def receive_email():
         #print('Course: ' + course_id)
         #print('Summary: \n' + summary)  # or message.html
         #print('------------------------------------')
-        insert_to_notion(message.plain, contents, message.subject, course_name, teacher_name,
+        insert_to_notion(email_content, contents, message.subject, course_name, teacher_name,
                          SENDER[0][1:-1], message.date)
